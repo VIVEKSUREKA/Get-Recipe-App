@@ -16,6 +16,11 @@ const RecipeForm = () => {
     setLoading(false);
   };
 
+  const formatRecipe = (recipe) => {
+    const lines = recipe.split("\n");
+    return lines.map((line, index) => <p key={index}>{line}</p>);
+  };
+
   return (
     <div className="Form-container">
       <form onSubmit={handleSubmit}>
@@ -39,7 +44,7 @@ const RecipeForm = () => {
       </form>
       {loading && <CircularProgress />}
       {!loading && !recipe && dish === "" && <p>Please enter a dish to get recipe</p>}
-      {!loading && recipe && <p>{recipe}</p>}
+      {!loading && recipe && formatRecipe(recipe)}
     </div>
   );
 };
