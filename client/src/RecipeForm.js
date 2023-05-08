@@ -11,7 +11,7 @@ const RecipeForm = () => {
     event.preventDefault();
     setLoading(true);
     console.log('Dish:', dish);
-    const response = await axios.post("http://localhost:5000/api/recipe", { dish });
+    const response = await axios.post("https://cuisine-pal.up.railway.app/api/recipe", { dish });
     setRecipe(response.data.recipe);
     setLoading(false);
   };
