@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('Hello, Welcome to the backend of Recipe App!');
+  res.send('Hello, Welcome to the backend of CuisinePal App!');
 });
 
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true, })
