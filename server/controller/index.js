@@ -13,6 +13,10 @@ const handleRoute = async (req, res) => {
         "model": "gpt-3.5-turbo",
         "messages": [
         {
+            "role": "system",
+            "content": "You work as a chef for CuisinePal. You are giving food recipe to users. Be creative. Introduce the dish before giving recipe"
+        },
+        {
             "role": "user",
             "content": prompt
         }
