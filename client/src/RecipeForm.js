@@ -42,7 +42,10 @@ const RecipeForm = () => {
           Submit
         </Button>
       </form>
-      {loading && <CircularProgress />}
+       <div style={{ display: "flex", alignItems: "center" }}>
+        {loading && <CircularProgress />}
+        {loading && <p style={{ marginLeft: "10px", fontStyle: "italic" }}>Our chefs are working their magic...</p>}
+      </div>
       {!loading && !recipe && dish === "" && <p>Please enter a dish to get recipe</p>}
       {!loading && recipe && formatRecipe(recipe)}
     </div>
