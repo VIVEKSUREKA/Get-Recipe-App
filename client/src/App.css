@@ -16,8 +16,23 @@
 }
 
 .Form-container {
-    background-color: rgba(255,255,255,0.5);
+    background-color: white;
     padding: 20px;
     border-radius: 10px;
     margin-top: 50px;
+}
+
+.recipeDisplay {
+    background-color: rgba(118, 231, 118, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Dish-image {
+    width: 15rem;
+    height: auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: auto;
 }
