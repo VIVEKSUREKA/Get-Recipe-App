@@ -7,7 +7,7 @@ dotenv.config();
 const search = async (query) => {
   const config = {
     method: 'get',
-    url: `https://customsearch.googleapis.com/customsearch/v1?cx=b4233c0ed513d408c&gl=in&num=1&q=${query}&safe=high&searchType=image&imgSize=MEDIUM&key=${process.env.GCSE_API_KEY}`,
+    url: `https://www.googleapis.com/customsearch/v1/siterestrict?cx=b4233c0ed513d408c&gl=in&num=1&q=${query}&safe=high&searchType=image&imgSize=MEDIUM&key=${process.env.GCSE_API_KEY}`,
     headers: { }
   };
 
