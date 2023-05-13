@@ -51,7 +51,7 @@ const RecipeForm = () => {
         {loading && <p style={{ marginLeft: "10px", fontStyle: "italic" }}>Our chefs are working their magic...</p>}
       </div>
       {!loading && image && recipe !== "Please give a valid dish." && <img src={image} alt="dish" className="Dish-image"/>}
-      //{!loading && image && <img src={image} alt="dish" className="Dish-image" />}
+      {/* {!loading && image && <img src={image} alt="dish" className="Dish-image" />} */}
       {!loading && recipe && <p className="recipeDisplay"> {formatRecipe(recipe)} </p>}
     </div>
   );
