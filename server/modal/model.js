@@ -8,6 +8,7 @@ const dishSchema = new Schema({
     unique: true,
   },
   recipe: String,
+  imgLink: String,
 }, { timestamps: true });
 
 const dishrecipe = mongoose.model('dishrecipe',dishSchema);
