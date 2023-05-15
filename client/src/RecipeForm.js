@@ -11,9 +11,10 @@ const RecipeForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    console.log('Dish:', dish);
-    const response = await axios.post("https://cuisine-pal.up.railway.app/api/recipe", { dish });
-    // const response = await axios.post("http://localhost:5000/api/recipe", { dish });
+    const trimmedDish = dish.trim(); // remove leading and trailing white spaces
+    console.log('Dish:', trimmedDish);
+    const response = await axios.post("https://cuisine-pal.up.railway.app/api/recipe", { dish: trimmedDish });
+    // const response = await axios.post("http://localhost:5000/api/recipe", { dish: trimmedDish });
     setRecipe(response.data.recipe);
     setImage(response.data.imgLink); //setting image to the url from google search
     setLoading(false);
@@ -31,7 +32,7 @@ const RecipeForm = () => {
           id="dish"
           label="Dish"
           value={dish}
-          onChange={(event) => setDish(event.target.value)}
+          onChange={(event) => setDish(event.target.value.replace(/\s+/g, " ").toLowerCase())} //normalise form input
           variant="outlined"
           margin="normal"
           fullWidth
